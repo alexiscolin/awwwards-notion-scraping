@@ -106,12 +106,18 @@ const getAwwwards = async function () {
 };
 
 
-(async () => {
+// (async () => {
+//     await getUrl();
+//     await findModification().catch(console.error);
+// })();
+const main = async function () {
     await getUrl();
     await findModification().catch(console.error);
-})();
+}
 
-
+module.exports = {
+    main: main
+}
 // Start
 // (async ()=>{
 //     parseAllProject(await getAllProjects());
