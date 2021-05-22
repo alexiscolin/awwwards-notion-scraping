@@ -2,24 +2,21 @@
 const CronJob = require('cron').CronJob
 const amqp = require('amqp-connection-manager')
 
+// ENV
 const AMQP_URL = process.env.CLOUDAMQP_URL || 'amqp://localhost';
 if (!AMQP_URL) process.exit(1)
 
+// GLOABLES
 const WORKER_QUEUE = 'worker-queue'  // To consume from worker process
 const CLOCK_QUEUE = 'clock-queue'  // To consume from clock process
-const JOBS = [{  // You could store these jobs in a database
+const JOBS = [{  // Multiple are possible -> could be stored these jobs in a database
   name: "Cron process 1",
   message: { "taskName": "getNotes", "queue": "worker-queue" },  // message in json format
-  cronTime: "* /1 * * *",  // Every 30min
+  cronTime: "*/50 * * * *",  // Every 30min
   repeat: 1
 }];
-// { 
-//   name: "Cron process 2",
-//   message: { "taskName": "anotherTaskToRun", "queue": "worker-queue" },  // message in json format
-//   dateTime: new Date("Mon Sep 17 2018 14:08:00 GMT-0300"),  // At specific time. Only executed once
-//   repeat: 0
-// }]
 
+//RABBITMQ
 // Create a new connection manager from AMQP
 var connection = amqp.connect([AMQP_URL])
 console.log('[AMQP] - Connecting...') 
@@ -36,6 +33,7 @@ connection.on('disconnect', function(params) {
   return console.error('[AMQP] - Disconnected.', params.err.stack) 
 })
 
+// FUNCTIONS 
 const startCronProcess = (jobs) => {
   if (jobs && jobs.length) {
     jobs.forEach(job => {

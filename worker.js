@@ -3,8 +3,10 @@ const {main} = require('./app.js');
 const AMQP_URL = process.env.CLOUDAMQP_URL || 'amqp://localhost';
 if (!AMQP_URL) process.exit(1)
 
+// GLOBALES
 const WORKER_QUEUE = 'worker-queue' 
 
+// RABBITMQ
 // Create a new connection manager from AMQP
 var connection = amqp.connect([AMQP_URL])
 console.log('[AMQP] - Connecting....') 
@@ -20,7 +22,7 @@ connection.on('disconnect', function(params) {
   return console.error('[AMQP] - Disconnected.', params.err.stack) 
 })
 
-// ---------- To receive the execution task messages
+// To receive the execution task messages
 let channelWrapper = connection.createChannel({
   json: true,
   setup: function(channel) {
@@ -54,13 +56,13 @@ function onMessage(data) {
   if (!message) {
     return
   }
-
+  // Actions here
   switch (message.taskName) {
     case 'getNotes': 
       main();
       break
 
-    // case 'otheTask': 
+    // case 'other': 
     //   // do another thing....
     //   break
 
