@@ -1,15 +1,15 @@
 {
   "name": "awwwards-notion",
   "version": "1.0.0",
-  "description": "",
+  "description": "Web Scrapping from Awwwards to Notion",
   "main": "app.js",
   "scripts": {
     "start": "node -e 'require(\"./app.js\").main()'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["Awwwards", "Notion", "API", "Web Scrapping"],
+  "author": "Alexis Colin",
+  "license": "MIT",
   "dependencies": {
     "@notionhq/client": "^0.1.3",
     "amqp-connection-manager": "^3.2.2",

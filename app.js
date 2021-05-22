@@ -29,7 +29,7 @@ const findModification = async url => {
                     "Status": {"name": value.status},
                     "Country": [{ "text": {"content": value.country !== value.name ? value.country : ' '}}],
                     "Website": value.website || ' ' ,
-                    "Note Globale": parseFloat(value.note),
+                    "Vote": parseFloat(value.note),
                     "Design": parseFloat(value.design),
                     "Usability": parseFloat(value.usability),
                     "Creativity": parseFloat(value.creativity),
