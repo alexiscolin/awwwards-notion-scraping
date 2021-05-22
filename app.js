@@ -30,10 +30,10 @@ const findModification = async url => {
                     "Country": [{ "text": {"content": value.country !== value.name ? value.country : ' '}}],
                     "Website": value.website || ' ' ,
                     "Vote": parseFloat(value.note),
-                    "Design": parseFloat(value.design),
-                    "Usability": parseFloat(value.usability),
-                    "Creativity": parseFloat(value.creativity),
-                    "Content": parseFloat(value.content),
+                    "Design": parseInt(value.design,10),
+                    "Usability": parseInt(value.usability,10),
+                    "Creativity": parseInt(value.creativity,10),
+                    "Content": parseInt(value.content,10),
                 }
             }
         })
