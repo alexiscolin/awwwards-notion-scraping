@@ -38,6 +38,10 @@ const findModification = async url => {
             }
         })
     }
+
+    if(newdata.length > 0) {
+        console.log(`${newdata.length} new votes recoreded.`);
+    }
 };
 
 // Get URL function
