@@ -24,7 +24,7 @@ Save in a notion table all votes assignated to a specific page. In addition, the
 - [AMQP](https://www.npmjs.com/package/amqplib)
 
 ## Usage
-1) Using this script need you to have a Notion account. Then, if needed, create a [new Integration](https://developers.notion.com/docs/getting-started). Duplicate this template, enter the awwwards url you want to follow (eg. `https://www.awwwards.com/sites/[SITE]`), save the database id and insert the table in any page you want to display a filtered view (or not).
+1) Using this script need you to have a Notion account. Then, if needed, create a [new Integration](https://developers.notion.com/docs/getting-started). Duplicate [this template](https://www.notion.so/jaunebleu/1640fe4f8e854c0ea6f8e1e8d743bc48?v=fdb3cbc7c2b14aa0b366c8fe542f3d09), enter the awwwards url you want to follow (eg. `https://www.awwwards.com/sites/[SITE]`), save the database id and insert the table in any page you want to display a filtered view (or not).
 
 2) Save Notion API variables (`NOTION_KEY` and `NOTION_DATABASE_ID`) to `.env` file and Heroku. 
 

@@ -25,7 +25,7 @@ const findModification = async url => {
             body:{
                 "parent": { "database_id": database_id},
                 "properties": {
-                    "Name":[{ "text": {"content" :value.name}}],
+                    "Voter":[{ "text": {"content" :value.name}}],
                     "Status": {"name": value.status},
                     "Country": [{ "text": {"content": value.country !== value.name ? value.country : ' '}}],
                     "Website": value.website || ' ' ,
@@ -50,7 +50,7 @@ const getUrl = async () => {
 // Get Notion saved data (filtered -> Name)
 const getNotion = async () => {
     const response = await notion.databases.query({database_id: database_id}); 
-    return response.results.map(data => data.properties.Name.title[0].plain_text);
+    return response.results.map(data => data.properties.Voter.title[0].plain_text);
 };
 
 // Get data from awwwards
