@@ -1,11 +1,3 @@
-// connection à l'api
-// 1 - get l'url 
-// 2 - scrap la page awwwards
-// 2 - loop 
-        // vérifier que les notes scrappé ne sont pas déjà enregistré dans la variable (iso notion)
-        // si pas entrée dans notion, alors on post nouvelle entrée dans notion
-        // on enregistre la nouvelle note dans la variable
-
 const puppeteer = require('puppeteer');
 const {Client} = require("@notionhq/client");
 const dotenv = require("dotenv");
