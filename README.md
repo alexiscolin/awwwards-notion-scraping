@@ -1,4 +1,4 @@
-# Notion API - get Awwwards votes
+# Notion API - get Awwwards Users votes
 
 Web scrapping scheduled script to save [Awwwards](https://www.awwwards.com/) votes to [Notion app](https://www.notion.so/). Ready to be used on Heroku.
 ## Installation
@@ -53,6 +53,8 @@ Heroku must be configured to run those script.
 - **Variables:**
     - `NOTION_DATABASE_ID`
     - `NOTION_KEY`
+- **Add-on:**
+    - Set `CloudAMQP` free add-on on `ressources`
 - **Buildpack  (settings -> in very order):**
     - `heroku/nodejs` 
     - `https://github.com/jontewks/puppeteer-heroku-buildpack` – [Puppeteer mandatory](https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-puppeteer-on-heroku)
