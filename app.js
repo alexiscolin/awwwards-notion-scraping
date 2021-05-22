@@ -40,7 +40,7 @@ const findModification = async url => {
     }
 
     if(newdata.length > 0) {
-        console.log(`${newdata.length} new votes recoreded.`);
+        console.log(`${newdata.length} new votes recorded.`);
     }
 };
 
