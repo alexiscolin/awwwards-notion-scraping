@@ -1,5 +1,5 @@
 const amqp = require('amqp-connection-manager')
-const {main} = require('app.js');
+const {main} = require('./app.js');
 const AMQP_URL = process.env.CLOUDAMQP_URL || 'amqp://localhost';
 if (!AMQP_URL) process.exit(1)
 
